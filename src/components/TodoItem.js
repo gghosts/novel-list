@@ -26,7 +26,12 @@ const TodoItem = (props) => {
         whileHover={{
           scale: 0.9, transition: {type: "spring", duration: .1}
         }}
-
+        exit={{
+          x:"-60vw",
+          scale: [1, 0],
+          transition: {duration: 0.5},
+          backgroundColor: "rgba(255,0,0,1)",
+        }}
         key={item.id} className="card">
               <textarea
                 ref={inputRef}

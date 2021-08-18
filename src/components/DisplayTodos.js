@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import {
@@ -14,6 +15,7 @@ const mapStateToProps = (state) => {
     };
   };
   
+
   const mapDispatchToProps = (dispatch) => {
     return {
       addTodo: (obj) => dispatch(addTodos(obj)),
@@ -28,11 +30,24 @@ const DisplayTodos = (props) => {
     return (
         <div className="displaytodos">
           <div className="buttons">
-            <button onClick={() => setSort ("active")}>Active</button>
-            <button onClick={() => setSort ("completed")}>Completed</button>
-            <button onClick={() => setSort ("all")}>All</button>
+            <motion.button 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+
+            onClick={() => setSort ("active")}>Active</motion.button>
+            <motion.button 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+
+            onClick={() => setSort ("completed")}>Completed</motion.button>
+            <motion.button 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+
+            onClick={() => setSort ("all")}>All</motion.button>
           </div>
           <ul>
+            <AnimatePresence>
             {props.todos.length > 0 && sort === "active"
               ? props.todos.map((item) => {
                 return (
@@ -77,6 +92,7 @@ const DisplayTodos = (props) => {
       ;
     })
             :null}
+            </AnimatePresence>
           </ul>
         </div>
     );
