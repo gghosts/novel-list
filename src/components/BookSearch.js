@@ -1,6 +1,5 @@
 import { render } from "@testing-library/react";
 import React from "react";
-const cors = require('cors');
 
 class BookSearch extends React.Component {
   constructor(props) {
@@ -19,7 +18,7 @@ class BookSearch extends React.Component {
     });
 
     const pointerToThis = this;
-    var url = "http://openlibrary.org/search/";
+    var url = "http://openlibrary.org/search.json?q=${bookSearchTerms}";
     var params = {
       action: "query",
       list: "search",
@@ -37,10 +36,40 @@ class BookSearch extends React.Component {
         return response.json();
       })
       .then(function (response) {
-        //console.log(reponse);
+        //console.log(response.query.search[0].title);
         for (var key in response.query.search) {
+          pointerToThis.state.bookSearchReturnValues.push({
+            queryResultPageFullURL: 'no link',
+            queryResultBookTitle: response.query.search[key].title,
+            queryResultBookAuthor: response.query.search[key].author,
+            queryResultBookSubject: response.query.search[key].subject,
+          });
         }
-      });
+      })
+        .then(
+          function (response) {
+            for(var key2 in pointerToThis.state.bookSearchReturnValues) {
+              let title = pointerToThis.state.bookSearchReturnValues[key2];
+              let pageID = page.queryResultpageTitle;
+              let urlForRetrievingPageTitleURLByPageTitle = "http://openlibrary.org/search.json?q={bookSearchTerms}";
+
+              fetch(urlForRetrievingPageTitleURLByPageTitle)
+              .then (
+                function (response) {
+                  return response.json();
+                }
+              )
+                .then (
+                  function (response) {
+                    page.queryResultPageFullURL = response.query.title[pagetitle].fullurl;
+
+                    pointerToThis.forceUpdate();
+                  }
+
+                )
+            }
+          }
+        )
   };
 
   changebookSearchTerms = (e) => {
