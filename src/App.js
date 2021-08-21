@@ -36,7 +36,7 @@ function App() {
         <DisplayBooks />
       </motion.div>
       <div className="BookSearch-engine">
-        <Booksearch />
+        <BookSearch />
       </div>
     </div>
   );

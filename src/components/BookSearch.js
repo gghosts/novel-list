@@ -1,15 +1,47 @@
 import { render } from "@testing-library/react";
 import React from "react";
+const cors = require('cors');
 
 class BookSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       bookSearchTerms: "",
+      bookSearchReturnValues: [],
     };
   }
 
-  useBookSearchEngine = () => {};
+  useBookSearchEngine = (e) => {
+    e.preventDefault();
+
+    this.setState({
+      bookSearchReturnValues: [],
+    });
+
+    const pointerToThis = this;
+    var url = "http://openlibrary.org/search/";
+    var params = {
+      action: "query",
+      list: "search",
+      srsearch: this.state.bookSearchTerms,
+      format: "json",
+    };
+
+    url = url + "?origin=*";
+    Object.keys(params).forEach((key) => {
+      url += "&" + key + "=" + params[key];
+    });
+
+    fetch(url)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (response) {
+        //console.log(reponse);
+        for (var key in response.query.search) {
+        }
+      });
+  };
 
   changebookSearchTerms = (e) => {
     this.setState({
@@ -25,7 +57,7 @@ class BookSearch extends React.Component {
         <form action="">
           <input
             type="text"
-            value=""
+            value={this.state.bookSearchTerms || ""}
             onChange={this.changebookSearchTerms}
             placeholder="Search books or authors for inspiration"
           />
