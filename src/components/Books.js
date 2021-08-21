@@ -1,62 +1,61 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { addTodos } from "../redux/reducer";
+import { addBooks } from "../redux/reducer";
 import { GoPlus } from "react-icons/go";
-import {motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const mapStateToProps = (state) => {
   return {
-    todos: state,
+    books: state,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addTodo: (obj) => dispatch(addTodos(obj)),
+    addbook: (obj) => dispatch(addBooks(obj)),
   };
 };
 
-const Todos = (props) => {
-  const [todo, setTodo] = useState("");
+const Books = (props) => {
+  const [book, setBook] = useState("");
 
   const handleChange = (e) => {
-    setTodo(e.target.value);
+    setBook(e.target.value);
   };
 
   const add = () => {
-    if(todo === ""){
+    if (book === "") {
       alert("Input is Empty");
     } else {
-      props.addTodo({
+      props.addBook({
         id: Math.floor(Math.random() * 1000),
-        item: todo,
+        item: book,
         completed: false,
-      })
-        setTodo("");
+      });
+      setBook("");
     }
-  }
-
-  //console.log("props from store", props);
+  };
 
   return (
-    <div className="addTodos">
+    <div className="addBooks">
       <input
         type="text"
         onChange={(e) => handleChange(e)}
-        className="todo-input"
-        value={todo}
+        className="book-input"
+        value={book}
       />
 
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         className="add-btn"
-        onClick={() => add ()}>
-        <GoPlus/>
+        onClick={() => add()}
+      >
+        <GoPlus />
       </motion.button>
       <br />
     </div>
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Todos);
+export default connect(mapStateToProps, mapDispatchToProps)(Books);

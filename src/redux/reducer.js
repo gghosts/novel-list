@@ -2,45 +2,43 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [];
 
-const addTodoReducer = createSlice({
-  name: "todos",
+const addBookReducer = createSlice({
+  name: "books",
   initialState,
   reducers: {
-    //here we willl write our reducer
-    //adding todos
-    addTodos: (state, action) => {
+    addBooks: (state, action) => {
       state.push(action.payload);
       return state;
     },
 
-    removeTodos: (state, action) => {
+    removeBooks: (state, action) => {
       return state.filter((item) => item.id !== action.payload);
     },
-    updateTodos: (state, action) => {
-      return state.map((todo) => {
-        if (todo.id === action.payload.id) {
+    updateBooks: (state, action) => {
+      return state.map((book) => {
+        if (book.id === action.payload.id) {
           return {
-            ...todo,
+            ...book,
             item: action.payload.item,
           };
         }
-        return todo;
+        return book;
       });
     },
-    completeTodos: (state, action) => {
-      return state.map((todo) => {
-        if (todo.id === action.payload) {
+    completeBooks: (state, action) => {
+      return state.map((book) => {
+        if (book.id === action.payload) {
           return {
-            ...todo,
+            ...book,
             completed: true,
           };
         }
-        return todo;
+        return book;
       });
     },
   },
 });
 
-export const { addTodos, removeTodos, updateTodos, completeTodos } =
-  addTodoReducer.actions;
-export const reducer = addTodoReducer.reducer;
+export const { addBooks, removeBooks, updateBooks, completeBooks } =
+  addBookReducer.actions;
+export const reducer = addBookReducer.reducer;
