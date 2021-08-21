@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addbook: (obj) => dispatch(addBooks(obj)),
+    addBook: (obj) => dispatch(addBooks(obj)),
   };
 };
 
