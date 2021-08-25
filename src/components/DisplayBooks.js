@@ -34,14 +34,14 @@ const DisplayBooks = (props) => {
           whileTap={{ scale: 0.9 }}
           onClick={() => setSort("active")}
         >
-          Active
+          Actively Reading
         </motion.button>
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => setSort("completed")}
         >
-          Completed
+          Completed Books
         </motion.button>
         <motion.button
           whileHover={{ scale: 1.1 }}

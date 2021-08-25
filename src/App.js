@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
-import BookSearch from "./components/BookSearch";
-import { render } from "@testing-library/react";
 
 function App() {
   return (
@@ -35,9 +33,7 @@ function App() {
         <Books />
         <DisplayBooks />
       </motion.div>
-      <div className="BookSearch-engine">
-        <BookSearch />
-      </div>
+      <div className="BookSearch-engine"></div>
     </div>
   );
 }
