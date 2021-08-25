@@ -50,6 +50,13 @@ const DisplayBooks = (props) => {
         >
           All
         </motion.button>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => setSort("all")}
+        >
+          <a href="https:gghosts.github.io">Search Books</a>
+        </motion.button>
       </div>
       <ul>
         <AnimatePresence>

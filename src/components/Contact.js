@@ -1,3 +1,6 @@
+import App from "App";
+
+<App />;
 const Contact = () => {
   return (
     <div className="contact">
