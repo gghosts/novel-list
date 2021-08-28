@@ -25,7 +25,7 @@ const Books = (props) => {
 
   const add = () => {
     if (book === "") {
-      alert("Input is Empty");
+      alert("List is Empty. What do you want to read?");
     } else {
       props.addBook({
         id: Math.floor(Math.random() * 1000),

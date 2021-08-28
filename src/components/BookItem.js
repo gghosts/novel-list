@@ -56,7 +56,7 @@ const BookItem = (props) => {
           <motion.button
             whileHover={{ scale: 1.4 }}
             whileTap={{ scale: 0.9 }}
-            style={{ color: "green" }}
+            style={{ color: "blue" }}
             onClick={() => completeBook(item.id)}
           >
             <IoCheckmarkDoneSharp />
