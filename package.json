@@ -42,8 +42,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ],
-    "homepage": [
-      "https://gghosts.github.io/novel-list"
-    ]
+    "homepage": "https://gghosts.github.io/novel-list"
   }
 }
