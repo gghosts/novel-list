@@ -30,7 +30,7 @@ body {
 .App h1 {
   display: inline;
   text-align: center;
-  content: center;
+  justify-content: center;
   margin-bottom: 2rem;
   color: #ffffff;
   text-shadow: 0 0 5px #4d4c58, 2px 4px 7px #2b2b2c;
@@ -55,9 +55,14 @@ body {
   color: #ffffff;
 }
 
+::placeholder {
+  color: #ffffff;
+}
+
 .book-input:focus {
   outline: none;
   border: 2px solid #37373b;
+  color: #ffffff;
 }
 
 .add-btn {
@@ -145,7 +150,6 @@ body {
 }
 
 .card .btns {
-  position: right;
   bottom: 1rem;
   right: 1rem;
   padding-top: 10px;
@@ -167,7 +171,6 @@ body {
 }
 
 .completed {
-  position: right;
   top: 0.3rem;
   background-color: #b2def3e5;
   border: none;

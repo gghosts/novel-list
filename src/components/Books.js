@@ -43,6 +43,7 @@ const Books = (props) => {
         onChange={(e) => handleChange(e)}
         className="book-input"
         value={book}
+        placeholder="What do you want to read?"
       />
 
       <motion.button
