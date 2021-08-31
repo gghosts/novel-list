@@ -12,15 +12,15 @@ function App() {
         transition={{ type: "spring", duration: 0.5 }}
         whileHover={{ scale: 1.1 }}
       >
-        Novel List
+        novel list
       </motion.h1>
       <motion.div
         initial={{ Y: 1000 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", duration: 1 }}
       >
-        <Books />
-        <DisplayBooks />
+          <Books />
+          <DisplayBooks />
       </motion.div>
     </div>
   );
