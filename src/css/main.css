@@ -184,7 +184,12 @@ body {
 }
 
 a:visited {
-  color: #272727;
+  color: #272729;
+  text-decoration: none;
+}
+
+a:link {
+  color: #272729;
   text-decoration: none;
 }
 
