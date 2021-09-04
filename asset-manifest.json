@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/novel-list/static/css/main.a5bbfd69.chunk.css",
-    "main.js": "/novel-list/static/js/main.d13d5cd1.chunk.js",
-    "main.js.map": "/novel-list/static/js/main.d13d5cd1.chunk.js.map",
+    "main.css": "/novel-list/static/css/main.eb1dca19.chunk.css",
+    "main.js": "/novel-list/static/js/main.fda328d3.chunk.js",
+    "main.js.map": "/novel-list/static/js/main.fda328d3.chunk.js.map",
     "runtime-main.js": "/novel-list/static/js/runtime-main.b438648c.js",
     "runtime-main.js.map": "/novel-list/static/js/runtime-main.b438648c.js.map",
     "static/js/2.e712cdde.chunk.js": "/novel-list/static/js/2.e712cdde.chunk.js",
     "static/js/2.e712cdde.chunk.js.map": "/novel-list/static/js/2.e712cdde.chunk.js.map",
     "index.html": "/novel-list/index.html",
-    "static/css/main.a5bbfd69.chunk.css.map": "/novel-list/static/css/main.a5bbfd69.chunk.css.map",
+    "static/css/main.eb1dca19.chunk.css.map": "/novel-list/static/css/main.eb1dca19.chunk.css.map",
     "static/js/2.e712cdde.chunk.js.LICENSE.txt": "/novel-list/static/js/2.e712cdde.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b438648c.js",
     "static/js/2.e712cdde.chunk.js",
-    "static/css/main.a5bbfd69.chunk.css",
-    "static/js/main.d13d5cd1.chunk.js"
+    "static/css/main.eb1dca19.chunk.css",
+    "static/js/main.fda328d3.chunk.js"
   ]
 }
