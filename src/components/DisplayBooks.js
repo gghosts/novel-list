@@ -55,7 +55,9 @@ const DisplayBooks = (props) => {
           whileTap={{ scale: 0.9 }}
           onClick={() => setSort("all")}
         >
-          <a href="https:gghosts.github.io">Search Books</a>
+          <a href="https:gghosts.github.io" target="_blank">
+            Search Books
+          </a>
         </motion.button>
       </div>
       <ul>

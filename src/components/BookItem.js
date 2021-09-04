@@ -31,7 +31,6 @@ const BookItem = (props) => {
         x: "-60vw",
         scale: [1, 0],
         transition: { duration: 0.5 },
-        backgroundColor: "rgba(255,0,0,1)",
       }}
       key={item.id}
       className="card"
@@ -56,7 +55,7 @@ const BookItem = (props) => {
           <motion.button
             whileHover={{ scale: 1.4 }}
             whileTap={{ scale: 0.9 }}
-            style={{ color: "blue" }}
+            style={{ color: "#0000FF" }}
             onClick={() => completeBook(item.id)}
           >
             <IoCheckmarkDoneSharp />
@@ -66,7 +65,7 @@ const BookItem = (props) => {
         <motion.button
           whileHover={{ scale: 1.4 }}
           whileTap={{ scale: 0.9 }}
-          style={{ color: "#8b0000" }}
+          style={{ color: "#D70040" }}
           onClick={() => removeBook(item.id)}
         >
           {""}
@@ -74,7 +73,7 @@ const BookItem = (props) => {
         </motion.button>
         {""}
       </div>
-      {item.completed && <span className="completed">done!</span>}
+      {item.completed && <span className="completed">Finished reading!</span>}
     </motion.li>
   );
 };
